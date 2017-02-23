@@ -1,0 +1,27 @@
+body{
+  background-color: rgb(52, 152, 219);
+}
+
+md-input-container.md-default-theme:not(.md-input-invalid).md-input-focused .md-input, md-input-container:not(.md-input-invalid).md-input-focused .md-input, md-input-container.md-default-theme:not(.md-input-invalid).md-input-resized .md-input, md-input-container:not(.md-input-invalid).md-input-resized .md-input{
+  border-color:rgb(52, 152, 219);
+}
+md-input-container.md-default-theme:not(.md-input-invalid).md-input-focused label, md-input-container:not(.md-input-invalid).md-input-focused label, md-input-container.md-default-theme:not(.md-input-invalid).md-input-focused md-icon, md-input-container:not(.md-input-invalid).md-input-focused md-icon{
+  color: rgb(52, 152, 219);
+}
+#signinbox{
+  position: absolute;
+  left: calc(50% - 178px);
+  top: calc(50% - 165px);
+}
+.title{
+  text-align: center;
+  padding: 20px;
+  margin-top: 0px;
+  font-family: 'Indie Flower', cursive;
+  font-size: 88px;
+  color: white;
+
+}
+.md-button.md-raised:not([disabled]){
+  background-color: rgb(52, 152, 219);
+}

@@ -1,0 +1,10 @@
+.navbar-inverse{
+	border-radius: 0px;
+}
+body{
+	background-color: rgb(52, 152, 219);
+	color: white;
+}
+legend{
+	color: white;
+}

@@ -1,0 +1,42 @@
+#weltitle{
+	font-family: 'Indie Flower', cursive;
+	font-size: 58px;
+	color: white;
+}
+.navbar-inverse{
+	border-radius: 0px;
+}
+body{
+	background-color: rgb(52, 152, 219);
+}
+.cardscontent{
+	background-color: rgb(52, 152, 219);
+	padding-left:5%;
+	padding-right: 5%;
+}
+@media(max-width:400px){
+	#weltitle{
+		font-size: 18px;
+		line-height: 40px;
+	}
+}
+@media (min-width: 400px) and (max-width:695px) {
+	#weltitle{
+		font-size: 38px;
+		line-height: 40px;
+	},
+	.cardscontent{
+		padding:0;
+	}
+}
+
+@media (min-width: 696px) and (max-width:995px) {
+	#weltitle{
+		font-size: 48px;
+		line-height: 30px;
+	}
+
+}
+.btn{
+	margin: 5px;
+}

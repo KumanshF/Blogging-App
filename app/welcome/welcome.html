@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WebApp Home Page</title>
+	<link rel="stylesheet" type="text/css" href="welcome/welcome.css">
+</head>
+<body ng-controller="WelcomeCtrl" ng-cloak>
+
+<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a href="#!/welcome" class="navbar-brand">Blogz</a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="#!/welcome">Home</a></li>
+			<li><a href="#!/addPost">Add Post</a></li>
+			<li ng-click="logout()"><a>Logout</a></li>
+		</ul>
+	</div>
+</nav>
+<div>
+	
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h3 id="weltitle">Welcome Home {{username}} !</h3>
+		</div>
+	</div>
+</div>
+
+<div class="cardscontent">
+  <div class="md-padding" layout="row" layout-xs="column" layout-wrap>
+    
+    <div flex-gt-xs="30" flex-sm="50" ng-repeat="article in articles | orderBy:'postdate'">
+    <md-card>
+          <md-card-header>
+            <md-card-avatar>
+             <i class="material-icons face">face</i>
+            </md-card-avatar>
+            <md-card-header-text>
+              <span class="md-title">From {{article.user}}</span>
+              <span class="md-subhead">{{article.currentdate}}</span>
+            </md-card-header-text>
+          </md-card-header>
+          <md-divider></md-divider>
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline">{{article.title}}</span>
+            </md-card-title-text>
+          </md-card-title>
+          <md-card-content>
+            <p ng-text-truncate="article.post" ng-tt-words-threshold="10">
+            </p>
+          </md-card-content>
+          <md-divider></md-divider>
+          <md-card-actions layout="row" layout-align="end center">
+          <button type="submit" class="btn btn-sm btn-primary" ng-click="editPost(article.$id)" data-target="#editModal" data-toggle="modal">Edit</button>
+			<button type="submit" class="btn btn-sm btn-danger" ng-click="deleteCnf(article)" data-target="#deleteModal" data-toggle="modal">Delete</button>
+          </md-card-actions> 
+      </md-card>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+	<div id="editModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4>Edit Post Details</h4>
+				</div>
+				<div class="modal-body">
+					<form role="form">
+						<div class="form-group">
+							<label for="title">Title</label>
+							<input type="text" name="title" class="form-control" ng-model="editPostData.title" />
+						</div>
+						<div class="form-group">
+							<label for="post">Post</label>
+							<textarea name="post" class="form-control" ng-model="editPostData.post"></textarea>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-sm btn-primary" ng-click="updatePost(editPostData.$id)">Update Post</button>
+					<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div id="deleteModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header"></div>
+				<div class="modal-body">
+					<p>Are you sure you want to delete the post?</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-sm btn-danger" ng-click="deletePost(deleteArticle)">Delete</button>
+					<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
