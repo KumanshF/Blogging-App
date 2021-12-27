@@ -1,1 +1,1 @@
-# Blogging-App-Blogz
+# Blogging-App
